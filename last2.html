@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Globistic</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="images/IMG-removebg.png">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="import" href="last2.html">
+<link rel="import" href="last3.html">
+<link rel="import" href="last4.html">
+<link rel="import" href="last5.html">
+<body id="myPage">
+  <!-- bootstrap css -->
+    <link rel="stylesheet" href="css1/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css1/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css1/responsive.css">  
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css1/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+     <!-- fevicon -->
+     <link rel="icon" href="images/fevicon.png" type="image/gif" />
+
+    <link rel="stylesheet" href="css1/bootstrap.min.css">
+    <link rel="stylesheet" href="css1/flexslider.css">
+    <link rel="stylesheet" href="css1/jquery.fancybox.css">
+    <link rel="stylesheet" href="css1/main.css">
+    <link rel="stylesheet" href="css1/responsive.css">
+    <link rel="stylesheet" href="css1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
+	  <link href="css/magnific-popup.css" rel="stylesheet">
+	  <link href="css/styles.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<!-- Sidebar on click 
+<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+    <i class="fa fa-remove"></i>
+  </a>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button">Link 4</a>
+  <a href="#" class="w3-bar-item w3-button">Link 5</a>
+</nav>
+-->
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align"  style="height: 40px; font-weight: 700;">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="last.html" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i>HOME</a>
+  <!--<a href="#team" class="w3-bar-item w3-button w3-hide-small w3-hover-white">ABOUT US</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">CONTACT</a>-->
+    <div class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button" title="Notifications">OUR PRODUCTS <i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="last2.html" class="w3-bar-item w3-button">CIRUTS</a>
+      <a href="last3.html" class="w3-bar-item w3-button">FRUITS</a>
+      <a href="last4.html" class="w3-bar-item w3-button">PULSES AND GRAINS</a>
+      <a href="last5.html" class="w3-bar-item w3-button">SEEDS </a>
+    </div> 
+  </div>
+  
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="#team" class="w3-bar-item w3-button">ABOUT US</a>
+    <a href="#myPage" class="w3-bar-item w3-button">HOME</a>
+    <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
+  </div>
+</div>
+
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity">
+  <img src="images/1212.jpg" alt="logo" style="width:100%;min-height:350px;max-height:800px; margin-top: 25px;">
+  <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-teal" title="Go To W3.CSS">CONTACT US</button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-top">
+    <header class="w3-container w3-teal w3-display-container"> 
+      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-teal w3-display-topright"><i class="fa fa-remove"></i></span>
+      <h2>CONTACT US <i class="fa fa-smile-o"></i></h2>
+      
+    </header>
+    
+    <img src="images/qr.jpg" alt="qr"  style="width: 400px ; margin-right: 100px;">
+   
+  </div>
+</div>
+
+<div class="vc_column-inner vc_custom_1513250637398">
+    <div class="wpb_wrapper">
+        <div class="clearboth">
+    </div>
+    <div class="gem-divider " style="margin-top: 130px;">
+    </div>
+	<div class="wpb_text_column wpb_content_element  wpb_animate_when_almost_visible wpb_bottom-to-top bottom-to-top wpb_start_animation animated">
+		<div class="wpb_wrapper">
+			<div class="title-h5" style="text-align: center;"><span class="light"> </span>
+            </div>
+
+		</div>
+	</div>
+<div class="clearboth">
+</div>
+<div class="gem-divider " style="margin-top: -15px;">
+</div>
+	<div class="wpb_text_column wpb_content_element  wpb_animate_when_almost_visible wpb_bottom-to-top bottom-to-top wpb_start_animation animated">
+		<div class="wpb_wrapper">
+			<div class="title-h2" style="text-align: center; margin-bottom: 30px; font-size: 25px;"></div>
+<div style="width: 55px; height: 3px; background:darkcyan; text-indent: 9999px; margin: auto;">2</div>
+
+		</div>
+	</div>
+</div>
+</div>
+
+
+  </head>
+  <body>
+
+  <!-- Projects -->
+	<div id="projects" class="filter">
+		<div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title"></div>
+                    <h2>CIRUTS</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Filter -->
+                    <div class="button-group filters-button-group">
+                        
+                        <a class="button" data-filter=".development"><span>CIRUTS</span></a>
+                        
+                    </div> <!-- end of button group -->
+                    <div class="grid">
+                        <div class="element-item development">
+                            <a class="popup-with-move-anim" href="#project-1"><div class="element-item-overlay"><span>ORANGE</span></div><img src="images/2323.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item development">
+                            <a class="popup-with-move-anim" href="#project-2"><div class="element-item-overlay"><span>MANDARIN</span></div><img src="images/4545.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item design development marketing">
+                            <a class="popup-with-move-anim" href="#project-3"><div class="element-item-overlay"><span>LEMON</span></div><img src="images/vvvb.jpg" alt="alternative"></a>
+                        </div>
+                        <div class="element-item design development marketing">
+                          <a class="popup-with-move-anim" href="#project-4"><div class="element-item-overlay"><span>GRAPE-FRUIT</span></div><img src="images/23121.jpg" alt="alternative"></a>
+                      </div>
+                        
+                    </div> <!-- end of grid -->
+                    <!-- end of filter -->
+                    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+		</div> <!-- end of container -->
+    </div> <!-- end of filter -->
+    <!-- end of projects -->
+
+
+    <!-- Project Lightboxes -->
+    <!-- Lightbox -->
+    <div id="project-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/img108.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>ORANGE</h3>
+                <hr class="line-heading">
+                <p>Oranges are among the world’s most popular fruits. Oranges are a healthy source of fiber, vitamin C, thiamine, folate, and antioxidants. They have multiple health benefits.</p> 
+
+                <div class="testimonial-container">
+                    <p class="testimonial-text"></p>
+                    <p class="testimonial-author"></p>
+                </div>
+               <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-2" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/4545.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>MANDARIN</h3>
+                <hr class="line-heading">
+                <p>Mandarin is known to be the sweetest and the most calming of all citrus essential oils. Mandarin essential oil is also incredibly gentle and known for its many healing properties.</p>
+                <div class="testimonial-container">
+                    <p class="testimonial-text"></p>
+                    <p class="testimonial-author"> </p>
+                </div>
+                <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <img class="img-fluid" src="images/vvvb.jpg" alt="alternative">
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>LEMON</h3>
+                <hr class="line-heading">
+                <p>Lemons are high in vitamin C, fiber, and various beneficial plant compounds.
+                  These nutrients are responsible for several health benefits.
+                  In fact, lemons may support heart health, weight control, and digestive health.</p> 
+                <div class="testimonial-container">
+                    <p class="testimonial-text"> </p>
+                    <p class="testimonial-author"></p>
+                </div>
+               <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+
+    <!-- Lightbox -->
+    <div id="project-4" class="lightbox-basic zoom-anim-dialog mfp-hide">
+      <div class="row">
+          <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+          <div class="col-lg-8">
+              <img class="img-fluid" src="images/23121.jpg" alt="alternative">
+          </div> <!-- end of col -->
+          <div class="col-lg-4">
+              <h3>GRAPE-FRUIT</h3>
+              <hr class="line-heading">
+              <p>Grapefruit is a citrus fruit with a flavor that can range from bittersweet to sour. It contains a range of essential vitamins and minerals. People can consume the fruit whole or as a juice or pulp.</p>
+              <div class="testimonial-container">
+                  <p class="testimonial-text"></p>
+                  <p class="testimonial-author"> </p>
+              </div>
+              <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a> 
+          </div> <!-- end of col -->
+      </div> <!-- end of row -->
+  </div> <!-- end of lightbox-basic -->
+  <!-- end of lightbox -->
+
+    </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of lightbox-basic -->
+    <!-- end of lightbox -->
+    <!-- end of project lightboxes -->
+
+  
+
+
+
+
+
+
+
+<!--<div id="fh5co-blog-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+        <h2>CIRUTS</h2>
+        <p style="font-size: 18px; font-weight: 700;"><span>Citrus fruits grow on flowering trees and shrubs, they have long been valued as
+          part of a nutritious and tasty diet. The flavors provided by citrus are among the
+          most preferred in the world, and they are also good for peoples’ health as the
+          vitamin C content of citrus fruits is rich by nature. <i class="sl-icon-heart"></i>  <a href=""></a></span></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <div class="blog-inner">
+          <a href="file:///home/muhammad/Desktop/My%20projects/site/ooo.jpg"><img class="img-responsive" src="file:///home/muhammad/Desktop/My%20projects/site/ooo.jpg" alt="Blog"></a>
+          <div class="desc">
+            <h3><a href="file:///home/muhammad/Desktop/My%20projects/site/ooo.jpg">ORANGE</a></h3>
+            <p>The orange is the fruit of various citrus species in the family Rutaceae (see list of plants known as orange); it primarily refers to Citrus × sinensis,[1] which is also called sweet orange, to distinguish it from the related Citrus × aurantium, referred to as bitter orange. The sweet orange reproduces asexually (apomixis through nucellar embryony); varieties of sweet orange arise through mutations.</p>
+          </div>
+        </div>
+        
+          <div class="col-md-12 "  style="place-items: right">
+            <div class="blog-inner">
+              <a href="file:///home/muhammad/Desktop/My%20projects/site/4545.jpg"><img class="img-responsive" src="file:///home/muhammad/Desktop/My%20projects/site/4545.jpg" alt="Blog"></a>
+              <div class="desc">
+                <h3><a href="file:///home/muhammad/Desktop/My%20projects/site/4545.jpg">MANDARIN</a></h3>
+                <p> 1an acid fruit that is botanically a many-seeded pale yellow oblong berry produced by a small thorny citrus tree (Citrus limon) and that has a rind from which an aromatic oil is extracted</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="blog-inner">
+          <a href="file:///home/muhammad/Desktop/My%20projects/site/vvvb.jpg"><img class="img-responsive" src="file:///home/muhammad/Desktop/My%20projects/site/vvvb.jpg" alt="Blog"></a>
+          <div class="desc">
+            <h3><a href="file:///home/muhammad/Desktop/My%20projects/site/vvvb.jpg">LEMON</a></h3>
+            <p>an acid fruit that is botanically a many-seeded pale yellow oblong berry produced by a small thorny citrus tree (Citrus limon) and that has a rind from which an aromatic oil is extracted</p>
+          </div>
+        </div>
+        
+      
+  </div>
+</div>-->
+
+
+
+
+
+<!--<div class="w3-container" style="background-color:lightgrey">
+  <h2 style="font-weight: bold;">Citrus</h2>
+  <p style="font-weight: 700; font-size: 17px;">Citrus fruits grow on flowering trees and shrubs, they have long been valued as
+    part of a nutritious and tasty diet. The flavors provided by citrus are among the
+    most preferred in the world, and they are also good for peoples’ health as the
+    vitamin C content of citrus fruits is rich by nature.</p>
+</div>
+
+<div class="w3-content w3-display-container" >
+
+<div class="w3-display-container mySlides" style="background-color: blue;">
+  <img src="file:///home/muhammad/Desktop/My%20projects/site/ooo.jpg" style="width:100%">
+  <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black" style="font-weight: 800;">
+    ORANGE
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="file:///home/muhammad/Desktop/My%20projects/site/4545.jpg" style="width:100%">
+  <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black " style="font-weight: 800;">
+   MANDARIN
+  </div>
+</div>
+
+<div class="w3-display-container mySlides">
+  <img src="file:///home/muhammad/Desktop/My%20projects/site/vvvb.jpg" style="width:100%">
+  <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black" style="font-weight: 800;">
+    LEMON
+  </div>
+</div>
+
+<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+<button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+<div>
+
+</div>
+<div class="w3-container w3-green">
+  <h5></h5>
+  <p></p>
+</div>-->
+
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center" style="height: 150px;">
+  <h4>Follow Us</h4>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+   <!--<a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>-->
+  <a class="w3-button w3-large w3-teal" href="globistic.om@gmail.com" title="Google +"><i class="fa fa-google-plus"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+  <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  <p>Powered by <a href="https://www.facebook.com/muhammad.rashed.9828456/" target="_blank">Muhammad-Rashed</a></p>
+
+  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
+    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+<script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+<script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+<script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+<script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+<script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+<script src="js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
+<script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
+<script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+<script src="js/scripts.js"></script> <!-- Custom scripts -->
+</body>
+</html>
+
+
+
+
+

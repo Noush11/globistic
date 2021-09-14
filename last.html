@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Globistic</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="images/IMG-removebg.png">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="import" href="last2.html">
+<link rel="import" href="last3.html">
+<link rel="import" href="last4.html">
+<link rel="import" href="last5.html">
+<link rel="import" href="about.html">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body id="myPage">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">  
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+
+<!-- Sidebar on click 
+<nav class="w3-sidebar w3-bar-block w3-white w3-card w3-animate-left w3-xxlarge" style="display:none;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-display-topright w3-text-teal">Close
+    <i class="fa fa-remove"></i>
+  </a>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+  <a href="#" class="w3-bar-item w3-button">Link 4</a>
+  <a href="#" class="w3-bar-item w3-button">Link 5</a>
+</nav>
+-->
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align"  style="height: 50px; font-weight: 700;">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-green w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="#" class="w3-bar-item w3-button w3-green"><i class="fa fa-home w3-margin-right"></i>HOME</a>
+  <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-hover-green">ABOUT US</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-green">CONTACT</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button" title="Notifications">OUR PRODUCTS <i class="fa fa-caret-down"></i></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="last2.html" class="w3-bar-item w3-button">CIRUTS</a>
+      <a href="last3.html" class="w3-bar-item w3-button">FRUITS</a>
+      <a href="last4.html" class="w3-bar-item w3-button">PULSES AND GRAINS</a>
+      <a href="last5.html" class="w3-bar-item w3-button">SEEDS </a>
+    </div> 
+  </div>
+  
+ </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+    <a href="#" class="w3-bar-item w3-button"></a>
+    <a href="#" class="w3-bar-item w3-button"></a>
+    <a href="#" class="w3-bar-item w3-button"></a>
+    <a href="#" class="w3-bar-item w3-button"></a>
+    <a href="#" class="w3-bar-item w3-button"></a>
+  </div>
+</div>
+
+<!-- Image Header -->
+<div class="w3-display-container w3-animate-opacity">
+  <img src="images/glo.jpg" alt="logo" style="width:100%;min-height:350px;max-height:600px;">
+  <div class="w3-container w3-display-bottomleft w3-margin-bottom">  
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-xlarge w3-theme w3-hover-green" title="Go To W3.CSS">CONTACT US</button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-top">
+    <header class="w3-container w3-green w3-display-container"> 
+      <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-green w3-display-topright"><i class="fa fa-remove"></i></span>
+      <h2>CONTACT US <i class="fa fa-smile-o"></i></h2>
+      
+
+      <div class="w3-container w3-padding-64 w3-theme-l5" id="" >
+        <div class="w3-row">
+          <div class="w3-col m5">
+          <div class="w3-padding-16"><span class="w3-xlarge w3-border-green w3-bottombar">Contact Us</span></div>
+            <h3>Address</h3>
+            <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  AZARITA ALEXANDRIA GOVERNORATE – EGYPT</p>
+            <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  + 0155 888 8399</p>
+            <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i> globistic.om@gmail.com</p>
+          </div>
+    </header>
+    
+    
+    </div>
+   
+  </div>
+</div>
+
+<!-- Team Container -->
+<div id="team" class="about" style="background-color: lightgrey;">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+        <div class="about-box">
+          <h2>About us</h2>
+          <p style="font-weight: 700;">Globistic Company adheres to the values of transparency, professional ethics, partnership and marketing relations, after strong and rigorous relations and alliances with established business partners have been established, and since its inception Globistic Company has been interested in strong commercial relations in many countries of the world,
+            especially (Europe, North Africa, the Middle East, the Far East and America).
+            we strive for economic growth and finding new markets.</p>
+          <a href="about.html">Read more</a>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding_rl">
+        <div class="">
+          <figure><img src="images/ftf.jpg" alt="#" /></figure>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+   <!-- vegetable 
+<div id="vegetable" class="vegetable " style="background-color: lightgrey;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div  class="titlepage">
+          <h2>PROCESSING-<strong class="llow">OUR MARKETS</strong> </h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
+        <div class="vegetable_shop" >
+          <h3 style="font-weight: bold;">PROCESSING</h3>
+          <p style="font-weight: 700;">Globistic Company Work with the latest manufacturing lines for Citrus, Fruits, Vegetables and all types of Pulses and peanuts, with the aim of direct export to its esteemed customers as well as a group of highest quality machines to clean and equip our products, as we are working with advanced processing lines, as well as color sorting machines with high technology taking into account the company’s dependence on Quality specifications and customer service to all of our clients.</p>
+          
+        </div>
+      </div>
+       <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 ">
+        <div class="vegetable_img">
+         <figure><img style="height: 500px;" src="file:///home/muhammad/Desktop/My%20projects/site/fhh.jpg" alt="#"/></figure>
+                 </div>
+      </div>
+       <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 ">
+        <div class="vegetable_img margin_top">
+         <figure><img style="height: 400px; width: 450px;" src="file:///home/muhammad/Desktop/My%20projects/site/fhf.jpg" alt="#"/></figure>
+          <h3 style="text-align: left; font-weight: bold; float: right; margin-top: -300px; font-size: 30px; " ><strong class="llow">OUR MARKETS</strong></h3>
+         <p style="font-weight: 700; color: black;  float: right; margin-top: -200px; margin-right: -200px; ">We have multiple markets all over the world. <br> Especially Arab, African, European and American countries.</p>  
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+<!-- end vegetable -->  
+
+<!--<div class="w3-row"><br>
+
+<div class="w3-quarter">
+  <img src="file:///home/muhammad/Desktop/My%20projects/site/666.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3></h3>
+  <p></p>
+</div>
+
+<div class="w3-quarter">
+  <img src="file:///home/muhammad/Desktop/My%20projects/site/565.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3></h3>
+  <p></p>
+</div>
+
+<div class="w3-quarter">
+  <img src="file:///home/muhammad/Desktop/My%20projects/site/888.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3> </h3>
+  <p> </p>
+</div>
+
+<div class="w3-quarter">
+  <img src="file:///home/muhammad/Desktop/My%20projects/site/909.png" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">
+  <h3> </h3>
+  <p></p>
+</div>
+
+</div>
+</div> -->
+
+<!-- Work Row -->
+<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+
+<div class="w3-quarter">
+<h1 style="font-weight: 700; font-size: 35px; color: orange;">Our Products</h1>
+<p style="font-weight: 700;">We control the farming operations from seeding to harvesting. We make periodic visits to the farms to test the crops, the land, and their compliance to our quality standards; we select only the best products that allow us to offer our clients flawless products</p>
+</div>
+
+<div class="w3-quarter">
+<div class="w3-card w3-white">
+  <img src="images/1111.jpg" alt="Snow" style="width:100%">
+  <div class="w3-container" style="background-color: lightgrey">
+  <h3 style="background-color:lightgrey">Citrus</h3>
+    <h4 style="background-color: lightgrey" >Citrus fruits grow on flowering trees and shrubs, they have long been valued as part of a nutritious and tasty diet.</h4>
+
+  </div>
+  </div>
+</div>
+
+<div class="w3-quarter">
+<div class="w3-card w3-white">
+  <img src="images/fff.jpg" alt="Lights" style="width:100%">
+  <div class="w3-container" style="background-color: lightgrey">
+  <h3  style="background-color: lightgrey">Fruits</h3>
+  <h4>Fruit the fleshy or dry ripened ovary of a flowering plant, enclosing the seed or seeds. Thus, apricots, mango, and grapes, as well as bean pods, corn grains, tomatoes,</h4>
+
+  </div>
+  </div>
+</div>
+
+<div class="w3-quarter">
+<div class="w3-card w3-white">
+  <img src="images/123.jpg" alt="Mountains" style="width:100%">
+  <div class="w3-container" style="background-color: lightgrey">
+  <h3 style="background-color: lightgrey"> Pluses And grains</h3>
+  <h4 style="background-color: lightgrey">Globistic Company owns the latest manufacturing lines for all types of Pulses and peanuts, with the aim of direct export to its esteemed customers as well as a group of modern machines to clean and equip our products</h4>
+  
+  </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Container 
+<div class="w3-container" style="position:relative">
+  
+  
+  
+</div>-->
+<div class="w3-container w3-green">
+  <h5></h5>
+  <p></p>
+</div>
+
+<div class="w3-container w3-padding-64 w3-theme-l5"  >
+<div class="w3-quarter">
+  <img src="images/lll.png" alt="Boss" style="width: 500px; margin-left: 200px; margin-top: -50px; height: 400px;" class=" w3-hover-opacity">
+  
+</div>
+
+<div class="w3-quarter">
+  <img src="images/llll.png" alt="Boss" style="width: 600px; margin-left: 500px; "  class=" w3-hover-opacity">
+  
+</div>
+
+</div>
+</div>
+</div>
+<div class="w3-container w3-green">
+  <h5></h5>
+  <p></p>
+</div>
+
+<!-- Pricing Row 
+<div class="w3-row-padding w3-center w3-padding-64" id="pricing">
+    <h2>PRICING</h2>
+    <p>Choose a pricing plan that fits your needs.</p><br>
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge">Basic</p>
+        </li>
+        <li class="w3-padding-16"><b>10GB</b> Storage</li>
+        <li class="w3-padding-16"><b>10</b> Emails</li>
+        <li class="w3-padding-16"><b>10</b> Domains</li>
+        <li class="w3-padding-16"><b>Endless</b> Support</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide"><i class="fa fa-usd"></i> 10</h2>
+          <span class="w3-opacity">per month</span>
+        </li>
+        <li class="w3-theme-l5 w3-padding-24">
+          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme-l2">
+          <p class="w3-xlarge">Pro</p>
+        </li>
+        <li class="w3-padding-16"><b>25GB</b> Storage</li>
+        <li class="w3-padding-16"><b>25</b> Emails</li>
+        <li class="w3-padding-16"><b>25</b> Domains</li>
+        <li class="w3-padding-16"><b>Endless</b> Support</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-wide"><i class="fa fa-usd"></i> 25</h2>
+          <span class="w3-opacity">per month</span>
+        </li>
+        <li class="w3-theme-l5 w3-padding-24">
+          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge">Premium</p>
+        </li>ABOUT US
+large"><i class="fa fa-check"></i> Sign Up</button>
+        </li>
+      </ul>
+    </div>
+</div>-->
+
+
+
+
+
+<!-- Contact Container -->
+<div id="contact" class="w3-container w3-padding-64 w3-theme-l5"  >
+  <div class="w3-row">
+    <div class="w3-col m5">
+    <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
+      <h3>Address</h3>
+      <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  AZARITA ALEXANDRIA GOVERNORATE – EGYPT</p>
+      <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i>  + 0155 888 8399</p>
+      <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i> globistic.om@gmail.com</p>
+    </div>
+
+<!-- price Container -->
+<div class="w3-container" style="width: 600px; height: 400px; float: right;">
+  
+
+  <div class="w3-card-4 w3-black"  >
+
+    <div class="w3-container w3-center">
+      <h3 style="font-size: xx-large; font-weight: bold; color: bisque;">Price Listing</h3>
+      <img src="images/ssss.png" alt="Avatar" style="width:80%">
+      <h5></h5>
+
+      <div class="w3-section">
+        
+        <a class="w3-button w3-large w3-red" href="https://mail.google.com/mail/u/0/?tab=rm#search/globistic.om%40gmail.com" title="Google +"> Request<i class="fa fa-google-plus"></i></a>      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  
+    
+
+    <!--map-->
+    
+        <div id="googleMap" style=" height:400px; margin-top: -460px; margin-right: -200px; max-height: 400px; max-width: 500px; "></div>
+
+        <script>
+        function myMap() {
+        var mapProp= {
+          center:new google.maps.LatLng(51.508742,-0.120850),
+          zoom:5,
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        }
+        </script>
+        
+        <iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14148.661391464902!2d29.916230052215827!3d31.20015384227295!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfe0df907ed143855!2sGlobistic!5e1!3m2!1sen!2sus!4v1627962630437!5m2!1sen!2sus" float="right" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        
+
+<!-- Image of location/map 
+<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%;">-->
+
+
+<!-- Footer -->
+
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+  <h4>Follow Us</h4>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+   <!--<a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>-->
+  <a class="w3-button w3-large w3-teal" href="https://mail.google.com/mail/u/0/?tab=rm#search/globistic.om%40gmail.com" title="Google +"><i class="fa fa-google-plus"></i></a>
+  <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+  <a class="w3-button w3-large w3-teal w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+  <p>Powered by <a href="https://www.facebook.com/muhammad.rashed.9828456/" target="_blank">Muhammad-Rashed</a></p>
+
+  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
+    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+
+<!--<script>
+// Script for side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "300px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+
+// Close side navigation
+function w3_close() {
+ // document.getElementById("mySidebar").style.display = "none";}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+// function openNav() {
+  //var x = document.getElementById("navDemo");
+  //if (x.className.indexOf("w3-show") == -1) {
+  //  x.className += " w3-show";
+ // } else { 
+ //   x.className = x.className.replace(" w3-show", "");
+  //}
+//}
+</script>-->
+
+</body>
+</html>
