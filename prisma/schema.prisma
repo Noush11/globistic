@@ -1,0 +1,318 @@
+// Globistic Custom Apparel — Prisma schema
+// Database: PostgreSQL
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─────────────────────────── Enums ───────────────────────────
+
+enum Role {
+  CUSTOMER
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum ProductCategory {
+  TSHIRT
+  HOODIE
+  SWEATSHIRT
+  LONG_SLEEVE
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  IN_PRODUCTION
+  PRINTED
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  AUTHORIZED
+  COMPLETED
+  FAILED
+  REFUNDED
+  PARTIALLY_REFUNDED
+}
+
+enum ShippingMethod {
+  STANDARD
+  EXPRESS
+}
+
+enum PrintArea {
+  FRONT
+  BACK
+  LEFT_SLEEVE
+  RIGHT_SLEEVE
+}
+
+enum CouponType {
+  PERCENTAGE
+  FIXED
+}
+
+// ─────────────────────────── Users ───────────────────────────
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  phone        String?
+  role         Role     @default(CUSTOMER)
+  emailVerified Boolean @default(false)
+
+  orders            Order[]
+  designs           Design[]
+  shippingAddresses ShippingAddress[]
+  passwordResets    PasswordResetToken[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([role])
+}
+
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tokenHash String   @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+// ───────────────────────── Catalog ───────────────────────────
+
+model Product {
+  id          String          @id @default(cuid())
+  slug        String          @unique
+  name        String
+  description String          @db.Text
+  category    ProductCategory
+  basePrice   Decimal         @db.Decimal(10, 2)
+  active      Boolean         @default(true)
+  images      String[]        @default([])
+  // Per-print-area price modifier (additional cost when an area is used)
+  printAreaPrice Decimal      @db.Decimal(10, 2) @default(5.00)
+
+  variants ProductVariant[]
+  orderItems OrderItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([category])
+  @@index([active])
+}
+
+// A specific color + size combination of a product, with its own stock & SKU.
+model ProductVariant {
+  id        String  @id @default(cuid())
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  color     String
+  colorHex  String  @default("#000000")
+  size      String  // S, M, L, XL, 2XL ...
+  sku       String  @unique
+  stock     Int     @default(100)
+  // Optional surcharge for this variant (e.g. 2XL costs more)
+  priceModifier Decimal @db.Decimal(10, 2) @default(0.00)
+  // Garment mockup image for this color (used as customizer base)
+  mockupImage String?
+
+  orderItems OrderItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([productId, color, size])
+  @@index([productId])
+}
+
+// ───────────────────────── Designs ───────────────────────────
+
+// A saved customization: the full canvas state for a garment.
+// `data` holds the JSON describing layers (uploaded images + text)
+// per print area, positions, sizes, rotation, fonts, colors, etc.
+model Design {
+  id        String  @id @default(cuid())
+  userId    String?
+  user      User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  name      String  @default("Untitled design")
+  productId String?
+  color     String?
+  data      Json    // DesignState (see src/types/design.ts)
+  // Generated mockup/preview image URLs per area
+  previews  Json?   // { FRONT: url, BACK: url, ... }
+  artworkUrls String[] @default([]) // original uploaded files (S3)
+
+  orderItems OrderItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}
+
+// ───────────────────────── Orders ────────────────────────────
+
+model Order {
+  id          String      @id @default(cuid())
+  orderNumber String      @unique
+  userId      String?
+  user        User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  status      OrderStatus @default(PENDING)
+
+  // Contact (captured even for guest checkout)
+  customerName  String
+  customerEmail String
+  customerPhone String?
+
+  // Money (all amounts in the store currency, 2dp)
+  subtotal       Decimal @db.Decimal(10, 2)
+  discountAmount Decimal @db.Decimal(10, 2) @default(0.00)
+  shippingAmount Decimal @db.Decimal(10, 2) @default(0.00)
+  taxAmount      Decimal @db.Decimal(10, 2) @default(0.00)
+  total          Decimal @db.Decimal(10, 2)
+  currency       String  @default("USD")
+
+  shippingMethod ShippingMethod @default(STANDARD)
+  couponId       String?
+  coupon         Coupon? @relation(fields: [couponId], references: [id], onDelete: SetNull)
+
+  shippingAddressId String?
+  shippingAddress   ShippingAddress? @relation(fields: [shippingAddressId], references: [id], onDelete: SetNull)
+
+  trackingNumber String?
+  notes          String? @db.Text
+
+  items    OrderItem[]
+  payments Payment[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id      String @id @default(cuid())
+  orderId String
+  order   Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  productId String?
+  product   Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+  variantId String?
+  variant   ProductVariant? @relation(fields: [variantId], references: [id], onDelete: SetNull)
+  designId  String?
+  design    Design? @relation(fields: [designId], references: [id], onDelete: SetNull)
+
+  // Snapshot fields (immutable record of what was ordered)
+  productName String
+  color       String
+  size        String
+  printAreas  PrintArea[] @default([])
+
+  unitPrice Decimal @db.Decimal(10, 2)
+  quantity  Int     @default(1)
+  lineTotal Decimal @db.Decimal(10, 2)
+
+  // Snapshot of design data + preview images at time of order
+  customization Json?
+  previews      Json?
+
+  createdAt DateTime @default(now())
+
+  @@index([orderId])
+}
+
+// ──────────────────────── Payments ───────────────────────────
+
+model Payment {
+  id      String @id @default(cuid())
+  orderId String
+  order   Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  provider        String        @default("square")
+  squarePaymentId String?       @unique
+  squareReceiptUrl String?
+  status          PaymentStatus @default(PENDING)
+  amount          Decimal       @db.Decimal(10, 2)
+  currency        String        @default("USD")
+  cardBrand       String?
+  cardLast4       String?
+  refundedAmount  Decimal       @db.Decimal(10, 2) @default(0.00)
+
+  rawResponse Json?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([orderId])
+  @@index([status])
+}
+
+// ─────────────────── Shipping Addresses ──────────────────────
+
+model ShippingAddress {
+  id     String  @id @default(cuid())
+  userId String?
+  user   User?   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  fullName   String
+  line1      String
+  line2      String?
+  city       String
+  state      String
+  postalCode String
+  country    String  @default("US")
+  phone      String?
+
+  orders Order[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+}
+
+// ───────────────────────── Coupons ───────────────────────────
+
+model Coupon {
+  id          String     @id @default(cuid())
+  code        String     @unique
+  description String?
+  type        CouponType
+  value       Decimal    @db.Decimal(10, 2) // percent (0-100) or fixed amount
+  minSubtotal Decimal    @db.Decimal(10, 2) @default(0.00)
+  maxUses     Int?       // null = unlimited
+  usedCount   Int        @default(0)
+  active      Boolean    @default(true)
+  expiresAt   DateTime?
+
+  orders Order[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([active])
+}
