@@ -60,6 +60,29 @@ coupons and analytics.
 
 ## 🚀 Getting Started
 
+### ▶️ Quickest preview — one command (Docker)
+
+No local Node or Postgres setup required. With Docker installed:
+
+```bash
+docker compose up --build
+```
+
+This builds the app, starts PostgreSQL, syncs the schema, seeds the demo
+catalog, and serves everything at **http://localhost:3000**.
+
+- Admin: `admin@globistic.com` / `Admin123!` → `/admin`
+- Customer: `demo@globistic.com` / `Demo123!`
+
+It runs in graceful preview mode (no Square/AWS/SMTP keys needed): card payments
+use a Square sandbox test nonce, uploads fall back to in-browser data URLs, and
+emails are logged to the container console. Stop with `Ctrl+C`; remove the
+database volume with `docker compose down -v`.
+
+---
+
+### Manual setup
+
 ### 1. Prerequisites
 - Node.js 18.18+
 - PostgreSQL 14+

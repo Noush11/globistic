@@ -1,0 +1,47 @@
+# Globistic — one-command preview stack.
+#   docker compose up --build
+# then open http://localhost:3000
+#   Admin:    admin@globistic.com / Admin123!   (/admin)
+#   Customer: demo@globistic.com  / Demo123!
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: globistic
+    ports:
+      - "5432:5432"
+    volumes:
+      - globistic_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d globistic"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/globistic?schema=public
+      # Preview secrets — change these for any real deployment.
+      JWT_SECRET: docker-preview-jwt-secret-change-me
+      APP_SECRET: docker-preview-app-secret-change-me
+      NEXT_PUBLIC_APP_URL: http://localhost:3000
+      SEED_ADMIN_EMAIL: admin@globistic.com
+      SEED_ADMIN_PASSWORD: Admin123!
+      # Square / AWS S3 / SMTP are intentionally unset — the app runs in
+      # graceful preview mode: card uses a sandbox test nonce, uploads fall
+      # back to in-browser data URLs, and emails are logged to the console.
+    ports:
+      - "3000:3000"
+
+volumes:
+  globistic_pgdata:
